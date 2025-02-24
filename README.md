@@ -19,7 +19,7 @@ Pencil Sketcher App is a **Streamlit-based web application** that converts your 
 ## 🚀 How to Run Locally  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/rktech0078/pencil-sketch-app.git
+   git clone [https://github.com/rktech0078/pencil-sketch-app.git](https://github.com/rktech0078/Pencil-Sketcher-Web-App)
    cd pencil-sketch-app
 Install dependencies:
 bash
@@ -47,11 +47,3 @@ markdown
 Copy
 Edit
 
-### **Steps to Add this README to GitHub**  
-1. Create a `README.md` file in your project folder.  
-2. Copy-paste the above code into `README.md`.  
-3. Save the file and push it to GitHub:  
-   ```bash
-   git add README.md
-   git commit -m "Added README file"
-   git push origin main
