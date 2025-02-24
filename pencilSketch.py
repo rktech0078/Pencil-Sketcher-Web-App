@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import cv2
+import io
 
 # Function to create pencil sketch
 def dodgeV2(x, y):
@@ -30,6 +31,12 @@ st.markdown(
         .stImage {
             border-radius: 10px;
         }
+        .popup-message {
+            text-align: center;
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -55,6 +62,18 @@ else:
     with col2:
         st.write("### ✏️ Pencil Sketch")
         st.image(final_sketch, use_container_width=True)
+
+    # Convert sketch to image format
+    sketch_pil = Image.fromarray(final_sketch)
+
+    # Save image to bytes buffer
+    img_buffer = io.BytesIO()
+    sketch_pil.save(img_buffer, format="PNG")
+    img_buffer.seek(0)
+
+    # Download button
+    if st.download_button(label="📥 Download Sketch", data=img_buffer, file_name="pencil_sketch.png", mime="image/png"):
+        st.markdown("<p class='popup-message'>✅ Download Successful! 🎉</p>", unsafe_allow_html=True)
 
 st.markdown(
     "<p style='text-align:center;'>Made with ❤️ by Abdul Rafay Khan | <a href='https://github.com/rktech0078' target='_blank'>Source Code</a></p>",
